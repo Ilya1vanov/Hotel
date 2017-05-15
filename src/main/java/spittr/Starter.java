@@ -5,8 +5,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import spittr.data.SpittleRepository;
-import spittr.data.model.Spittle;
 
 import java.util.Date;
 
@@ -21,9 +19,8 @@ public class Starter {
     }
 
     @Bean
-    public CommandLineRunner init(SpittleRepository repository) {
+    public CommandLineRunner init() {
         return args -> {
-            repository.save(new Spittle("some message", new Date()));
         };
     }
 }

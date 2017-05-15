@@ -1,8 +1,11 @@
 package spittr.config;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.
         AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class SpittrWebAppInitializer
+import javax.servlet.Filter;
+
+public class WebAppInitializer
         extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override
     protected String[] getServletMappings() {

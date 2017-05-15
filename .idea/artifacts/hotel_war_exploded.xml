@@ -29,7 +29,6 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.8.8" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-log4j2:1.5.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-slf4j-impl:2.7" />
           <element id="library" level="project" name="Maven: org.apache.logging.log4j:log4j-api:2.7" />
@@ -40,6 +39,17 @@
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:8.5.14" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-el:8.5.14" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:8.5.14" />
+          <element id="library" level="project" name="Maven: org.springframework.boot:spring-boot-starter-security:1.5.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:4.2.2.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.8.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-jasper:8.5.14" />
           <element id="library" level="project" name="Maven: org.eclipse.jdt.core.compiler:ecj:4.6.1" />
@@ -49,10 +59,7 @@
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:1.11.1.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:1.13.3.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:4.3.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:4.3.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:4.3.8.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.3.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.8.10" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.25" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:5.2.9.Final" />
