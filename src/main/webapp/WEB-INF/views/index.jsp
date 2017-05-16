@@ -4,6 +4,7 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
+<c:set var="page" value="index"/>
 <!DOCTYPE html>
 <html class="no-js">
     <%@include file='components/head.jsp'%>

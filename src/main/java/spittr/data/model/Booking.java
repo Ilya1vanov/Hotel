@@ -32,8 +32,9 @@ public class Booking {
 
     private Booking() {}
 
-    public Booking(User owner, Date from, Date to) {
-        this.owner = owner;
+    public Booking(User owner, Room room, Date from, Date to) {
+        setOwner(owner);
+        setRoom(room);
         this.from = from;
         this.to = to;
     }

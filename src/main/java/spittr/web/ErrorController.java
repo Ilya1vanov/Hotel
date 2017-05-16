@@ -19,6 +19,8 @@ public class ErrorController {
         ModelAndView mav = new ModelAndView("error");
         String description;
         Integer httpErrorCode = getErrorCode(req);
+        if (httpErrorCode == null)
+            httpErrorCode = 500;
 
         switch (httpErrorCode) {
             case 400: {
@@ -48,10 +50,5 @@ public class ErrorController {
 
     private Integer getErrorCode(HttpServletRequest httpRequest) {
         return httpRequest != null ? (Integer) httpRequest.getAttribute("javax.servlet.error.status_code") : null;
-    }
-
-    @RequestMapping(value = "500Error", method = RequestMethod.GET)
-    public void throwRuntimeException() {
-        throw new NullPointerException("Throwing a null pointer exception");
     }
 }

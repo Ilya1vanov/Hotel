@@ -1,6 +1,6 @@
 package spittr.data.constraints.annotation;
 
-import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator;
+import spittr.data.constraints.validator.EmailValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

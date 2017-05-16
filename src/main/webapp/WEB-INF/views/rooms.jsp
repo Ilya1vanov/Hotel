@@ -3,6 +3,8 @@
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
+
+<c:set var="page" value="rooms"/>
 <!DOCTYPE html>
 <html class="no-js">
     <%@include file='components/head.jsp'%>

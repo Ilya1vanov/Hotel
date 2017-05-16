@@ -16,10 +16,11 @@
         </script>
 
         <div class="inner-header">
-            <h1>Oops...</h1>
-            <h2>${description}</h2>
-            <h3>Code: ${code}</h3>
-            <button class="btn btn-large btn-green" onclick="goBack()">Back to safety</button>
+            <div class="container">
+                <h1>Oops...</h1>
+                <p>Code: ${code}. ${description}</p>
+                <button class="btn btn-large btn-green" onclick="goBack()">Back to safety</button>
+            </div>
         </div>
 
         <%@include file='components/footer.jsp'%>

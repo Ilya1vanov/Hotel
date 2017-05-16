@@ -11,5 +11,60 @@
     <schema id="5" parent="1" name="mysql"/>
     <schema id="6" parent="1" name="performance_schema"/>
     <schema id="7" parent="1" name="sys"/>
+    <table id="8" parent="2" name="bookings"/>
+    <table id="9" parent="2" name="hibernate_sequence"/>
+    <table id="10" parent="2" name="rooms"/>
+    <column id="11" parent="8" name="booking_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="12" parent="8" name="from_date">
+      <Position>2</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="13" parent="8" name="to_date">
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="14" parent="8" name="owner_id">
+      <Position>4</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="15" parent="8" name="room_id">
+      <Position>5</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <index id="16" parent="8" name="FKmgj90xy8xmugtn5bv0espn7tr">
+      <ColNames>owner_id</ColNames>
+    </index>
+    <index id="17" parent="8" name="FKrgoycol97o21kpjodw1qox4nc">
+      <ColNames>room_id</ColNames>
+    </index>
+    <key id="18" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>booking_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="19" parent="9" name="next_val">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+    </column>
+    <column id="20" parent="10" name="room_id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="21" parent="10" name="wi_fi">
+      <Position>2</Position>
+      <DataType>bit(1)|0</DataType>
+    </column>
+    <key id="22" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>room_id</ColNames>
+      <Primary>1</Primary>
+    </key>
   </database-model>
 </dataSource>

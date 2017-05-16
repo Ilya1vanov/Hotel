@@ -10,7 +10,7 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="s" %>
 
-<c:set var="title" value="Hotel - Login"/>
+<c:set var="page" value="login"/>
 <!DOCTYPE html>
 <html>
     <%@include file='components/head.jsp'%>

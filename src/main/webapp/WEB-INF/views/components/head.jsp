@@ -10,9 +10,8 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
-<c:set var="defaultTitle" value="${2*2}"/>
 <head>
-    <title>${not empty title ? title : 'Hotel'}</title>
+    <title><s:message code="${empty page ? 'default' : page}.title"/></title>
     <link rel="stylesheet" href="<c:url value="/resources/css/normalize.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css" />">
     <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-tooltip.css"/>"/>

@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author Ilya Ivanov
@@ -54,7 +55,8 @@ public class User {
     @OneToMany(mappedBy = "owner")
     private List<Booking> bookings;
 
-    private List<? extends GrantedAuthority> roles;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
+    private List<UserRole> roles;
 
     public User() {
         this("", "", "", "", "");
@@ -133,12 +135,24 @@ public class User {
         }
     }
 
-    public List<? extends GrantedAuthority> getRoles() {
+    public List<UserRole> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<? extends GrantedAuthority> roles) {
+    public void setRoles(List<UserRole> roles) {
         this.roles = roles;
+    }
+
+    public void addRole(UserRole role) {
+        this.roles.add(role);
+    }
+
+    public List<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream().map(userRole -> new SimpleGrantedAuthority(userRole.getRole())).collect(Collectors.toList());
+    }
+
+    public void setAuthorities(List<? extends GrantedAuthority> roles) {
+        this.roles = roles.stream().map(o -> new UserRole(this.username, o.getAuthority(), this)).collect(Collectors.toList());
     }
 
     @Override

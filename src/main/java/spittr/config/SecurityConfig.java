@@ -43,14 +43,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/", "/home", "/rooms").permitAll()
                     .antMatchers("/booking/**").access("hasRole('ROLE_USER')")  //SpEL
                     .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
-//                    .antMatchers("/errors").denyAll()
                     .and()
                 .formLogin()
                     .loginPage("/login")
                     .usernameParameter("username")
                     .passwordParameter("password")
                     .permitAll()
-//                    .failureForwardUrl("/login?error=true")
                     .and()
                 .rememberMe()
                     .tokenValiditySeconds(3600)     // 1 hour
@@ -62,9 +60,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .invalidateHttpSession(true)
                     .permitAll()
                     .and()
-//                .exceptionHandling()
-//                    .accessDeniedPage("/403")
-//                    .and()
+                .exceptionHandling()
+                    .accessDeniedPage("/403")
+                    .and()
                 .csrf()
                     .disable();
     }

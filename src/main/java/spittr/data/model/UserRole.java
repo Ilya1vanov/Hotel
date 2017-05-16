@@ -1,7 +1,7 @@
 package spittr.data.model;
 
 
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import javax.persistence.*;
 
@@ -9,25 +9,30 @@ import javax.persistence.*;
  * @author Ilya Ivanov
  */
 @Entity
-@Table(name="user_roles")
+@Table(name = "user_roles")
 public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="user_role_id")
+    @Column(name = "user_role_id")
     private Long userRoleId;
 
-    @Column(name="username")
+    @Column(name = "username")
     private String username;
 
-    @Column(name="role")
-    private GrantedAuthority role;
+    @Column(name = "role")
+    private String role;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     private UserRole() {
     }
 
-    public UserRole(String username, GrantedAuthority role) {
+    public UserRole(String username, String role, User user) {
         this.username = username;
         this.role = role;
+        setUser(user);
     }
 
     public Long getUserRoleId() {
@@ -46,11 +51,23 @@ public class UserRole {
         this.username = username;
     }
 
-    public GrantedAuthority getRole() {
+    public String getRole() {
         return role;
     }
 
-    public void setRole(GrantedAuthority role) {
+    public void setRole(String role) {
         this.role = role;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+        if (!user.getRoles().contains(this)) {
+            // this may cause performance issues if you have a large data set since this operation is O(n)
+            user.addRole(this);
+        }
     }
 }

@@ -30,6 +30,9 @@ public class UserDto {
     @ValidEmail
     private String email;
 
+    private UserDto() {
+    }
+
     public UserDto(String firstName, String lastName, String username, String password, String matchingPassword, String email) {
         this.firstName = firstName;
         this.lastName = lastName;

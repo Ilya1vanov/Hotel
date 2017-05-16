@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import spittr.data.model.User;
 import spittr.data.model.UserDto;
 import spittr.service.UserService;
-import spittr.service.exception.EmailExistsException;
+import spittr.service.exception.UserExistsException;
 
 import javax.validation.Valid;
 
@@ -47,34 +47,24 @@ public class UserController {
         User registered = null;
         if (!result.hasErrors()) {
             registered = createUserAccount(accountDto, result);
-        }
-        if (registered == null) {
-            result.rejectValue("email", "message.regError");
+            if (registered == null) {
+                result.rejectValue("username", "Already exists");
+            }
         }
         if (result.hasErrors()) {
             return new ModelAndView("registration", "user", accountDto);
         }
         else {
-            return new ModelAndView("successRegister", "user", accountDto);
+            log.debug("New user: " + registered);
+            return new ModelAndView("registration", "success", "true");
         }
     }
 
     private User createUserAccount(UserDto accountDto, BindingResult result) {
         try {
             return service.registerNewUserAccount(accountDto);
-        } catch (EmailExistsException e) {
+        } catch (UserExistsException e) {
             return null;
         }
-    }
-
-    @RequestMapping(value = "/registration", method = POST)
-    public String processRegistration(@Valid User user, Errors errors, Model model) {
-        if (errors.hasErrors()) {
-            return "registration";
-        }
-
-        log.debug("New user: " + user);
-        model.addAttribute("success", "");
-        return "registration";
     }
 }

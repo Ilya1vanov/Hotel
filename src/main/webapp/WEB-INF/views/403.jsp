@@ -15,9 +15,11 @@
             }
         </script>
         <div class="inner-header">
-            <h1>Oops...</h1>
-            <h2>It looks like you don't have rights to access this page</h2>
-            <button class="btn btn-large btn-green" onclick="goBack()">Back to safety</button>
+            <div class="container">
+                <h1>Oops...</h1>
+                <p>It looks like you don't have rights to access this page</p>
+                <button class="btn btn-large btn-green" onclick="goBack()">Back to safety</button>
+            </div>
         </div>
 
         <%@include file='components/footer.jsp'%>
