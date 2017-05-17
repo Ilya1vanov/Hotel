@@ -30,7 +30,13 @@ public class Booking {
     @Column(name = "to_date")
     private Date to;
 
-    private Booking() {}
+    public Booking() {
+        this(new Date(), new Date());
+    }
+
+    public Booking(Date from, Date to) {
+        this(null, null, from, to);
+    }
 
     public Booking(User owner, Room room, Date from, Date to) {
         setOwner(owner);
@@ -49,9 +55,11 @@ public class Booking {
 
     public void setOwner(User owner) {
         this.owner = owner;
-        if (!owner.getBookings().contains(this)) {
-            // this may cause performance issues if you have a large data set since this operation is O(n)
-            owner.getBookings().add(this);
+        if (this.owner != null) {
+            if (!owner.getBookings().contains(this)) {
+                // this may cause performance issues if you have a large data set since this operation is O(n)
+                owner.getBookings().add(this);
+            }
         }
     }
 
@@ -61,9 +69,11 @@ public class Booking {
 
     public void setRoom(Room room) {
         this.room = room;
-        if (!room.getBookings().contains(this)) {
-            // this may cause performance issues if you have a large data set since this operation is O(n)
-            room.getBookings().add(this);
+        if (this.room != null) {
+            if (!room.getBookings().contains(this)) {
+                // this may cause performance issues if you have a large data set since this operation is O(n)
+                room.getBookings().add(this);
+            }
         }
     }
 

@@ -15,7 +15,6 @@ public class AdminController {
     @RequestMapping(value="/admin", method=RequestMethod.GET)
     public String adminMethodSecured() {
         log.debug("SecurityController adminMethodSecured() is called with ROLE_ADMIN");
-        return "/admin";
-
+        return "admin";
     }
 }

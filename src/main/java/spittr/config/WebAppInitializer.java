@@ -14,7 +14,7 @@ public class WebAppInitializer
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] { RootConfig.class, JPAConfig.class };
+        return new Class<?>[] { JPAConfig.class };
     }
 
     @Override

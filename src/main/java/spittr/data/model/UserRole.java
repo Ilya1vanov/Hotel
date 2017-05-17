@@ -29,6 +29,11 @@ public class UserRole {
     private UserRole() {
     }
 
+    public UserRole(String username, String role) {
+        this.username = username;
+        this.role = role;
+    }
+
     public UserRole(String username, String role, User user) {
         this.username = username;
         this.role = role;
@@ -65,9 +70,11 @@ public class UserRole {
 
     public void setUser(User user) {
         this.user = user;
-        if (!user.getRoles().contains(this)) {
-            // this may cause performance issues if you have a large data set since this operation is O(n)
-            user.addRole(this);
+        if (this.user != null) {
+            if (!user.getRoles().contains(this)) {
+                // this may cause performance issues if you have a large data set since this operation is O(n)
+                user.addRole(this);
+            }
         }
     }
 }

@@ -4,6 +4,7 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags"%>
 
+<c:set var="page" value="admin"/>
 <!DOCTYPE html>
 <html class="no-js">
     <%@include file='components/head.jsp'%>
@@ -15,8 +16,8 @@
             }
         </script>
 
-        <div class="inner-header">
-            <h1>ADMIN PAGE</h1>
+        <div class="inner-header container">
+            <h1><s:message code="admin.message"/></h1>
             <button class="btn btn-large btn-green" onclick="goBack()">Back</button>
         </div>
 

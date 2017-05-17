@@ -25,7 +25,7 @@ public class RoomController {
     }
 
     @RequestMapping(method = GET)
-    public String home(Model model) {
+    public String room(Model model) {
         final List<Room> all = roomRepository.findAll();
         model.addAttribute("rooms", all);
         return "rooms";

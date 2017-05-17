@@ -70,6 +70,7 @@ public class User {
         this.password = password;
         this.enabled = true;
         this.bookings = new ArrayList<>();
+        this.roles = new ArrayList<>();
     }
 
     public Long getId() {
